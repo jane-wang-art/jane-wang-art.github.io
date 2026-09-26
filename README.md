@@ -7,19 +7,9 @@ Site address after activation: **https://jane-wang-art.github.io/**
 Artwork by **Jane Wang**. Copyright © 2026 **jane-wang-art**. All rights reserved.
 Original artwork: https://github.com/jane-wang-art/jane-frank-artwork
 
-## One-time GitHub Pages activation
+## Deployment
 
-The Hexo build, nine original-image integrity checks, internal-link checks, and desktop/mobile browser tests passed on 26 September 2026. The generated website is saved on `gh-pages`. The first deployment was blocked specifically because Pages was not enabled and the connected app could not create a Pages site: `Resource not accessible by integration`.
-
-The repository owner or maintainer needs to make this one-time setting:
-
-1. Open [this repository's Pages settings](https://github.com/jane-wang-art/jane-wang-art.github.io/settings/pages).
-2. Under **Build and deployment → Source**, choose **GitHub Actions**. No new workflow template is needed.
-3. Open [Build and publish Hexo gallery](https://github.com/jane-wang-art/jane-wang-art.github.io/actions/workflows/pages.yml), choose **Run workflow**, and run it on `main`.
-
-The workflow already builds and deploys the complete site. Do not upload the pictures again or run any local commands just to publish. After activation, subsequent source commits publish automatically. A passing build is not by itself proof that Pages deployment succeeded; check the deploy job and actual site URL.
-
-Official instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+GitHub Pages is configured to publish with **GitHub Actions**. Pushes to `main` build, verify and deploy the Hexo site automatically. The workflow verifies the nine artwork files, internal routes, responsive layouts and browser rendering before deployment.
 
 ## Pages and features
 
