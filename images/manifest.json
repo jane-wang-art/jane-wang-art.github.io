@@ -1,0 +1,52 @@
+{
+  "source_repository": "jane-wang-art/jane-frank-artwork",
+  "source_commit": "0f6cdfb0eba2ced638c5c292d4cb04c9859e8cda",
+  "originals": [
+    {
+      "file": "images/autumn-terrace/01.png",
+      "sha256": "6a0f5e8167bbca06b5cf2574746a3b2dd81d471773455c76b953714b9c8da0c4",
+      "source": "stories/001-autumn-terrace/publication-exports/01.png"
+    },
+    {
+      "file": "images/autumn-terrace/02.png",
+      "sha256": "868eb58b1d08b739474e0012a531530c903ab38419e3b49a9c4d4b43eff910fc",
+      "source": "stories/001-autumn-terrace/publication-exports/02.png"
+    },
+    {
+      "file": "images/autumn-terrace/03.png",
+      "sha256": "316d3217bff43eebc8e6b084ff5edc1c8ea9a4e1b422e3eb296b73c268e8c008",
+      "source": "stories/001-autumn-terrace/publication-exports/03.png"
+    },
+    {
+      "file": "images/autumn-terrace/04.png",
+      "sha256": "6bcbb20c91d2cf5ab0277e0ea222252e78fa37837ccdcb8fe4017cf92cc2b5bf",
+      "source": "stories/001-autumn-terrace/publication-exports/04.png"
+    },
+    {
+      "file": "images/autumn-terrace/05.png",
+      "sha256": "7bb05918e87199c856e14a2dbc8a224f3fd48de8ba794f1684b9b7d353b4c504",
+      "source": "stories/001-autumn-terrace/publication-exports/05.png"
+    },
+    {
+      "file": "images/autumn-terrace/06.png",
+      "sha256": "8f46b3ffb565a571d91754de442e8bf6dc8a2c9e694295b829ad0c63ff81a4f1",
+      "source": "stories/001-autumn-terrace/publication-exports/06.png"
+    },
+    {
+      "file": "images/autumn-terrace/07.png",
+      "sha256": "73775f7d2c897e4101797c68f26b27ec3b3dbab92df6235911c71b37cae5aa3a",
+      "source": "stories/001-autumn-terrace/publication-exports/07.png"
+    },
+    {
+      "file": "images/autumn-terrace/08.png",
+      "sha256": "c7f80cc090fd621ebf2cad8a7dd47b18fcf7e495a03662f1f83cef390173da4e",
+      "source": "stories/001-autumn-terrace/publication-exports/08.png"
+    },
+    {
+      "file": "images/autumn-terrace/09.png",
+      "sha256": "476b3a7dec4346f27616a507052a5b32d4d9af747554ee33abac80069c0f5cb8",
+      "source": "stories/001-autumn-terrace/publication-exports/09.png"
+    }
+  ],
+  "derivatives": "Proportional WebP display copies; original PNG files retained unchanged."
+}

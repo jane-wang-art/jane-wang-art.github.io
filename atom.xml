@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jane Wang</title>
+  
+  <subtitle>生活漫画 · Illustrated days</subtitle>
+  <link href="https://jane-wang-art.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jane-wang-art.github.io/"/>
+  <updated>2026-09-26T08:29:13.219Z</updated>
+  <id>https://jane-wang-art.github.io/</id>
+  
+  <author>
+    <name>Jane Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>秋日露台</title>
+    <link href="https://jane-wang-art.github.io/stories/autumn-terrace/"/>
+    <id>https://jane-wang-art.github.io/stories/autumn-terrace/</id>
+    <published>2026-09-26T08:00:00.000Z</published>
+    <updated>2026-09-26T08:29:13.219Z</updated>
+    
+    <content type="html"><![CDATA[<p>露台闲置了一整个夏天。</p><p>终于等到没有大太阳、还有一点凉风的天气。两个人搬出椅子，切好桃子，泡上茶，还认真配了白噪音。</p><p>这下，总可以舒服地坐一下午了吧。</p><span id="more"></span><p>这一篇共九张，按顺序往下看。每张都可以点开放大；原始文件与版本记录保存在作品仓库中。</p>]]></content>
+    
+    
+    <summary type="html">闲置了一整个夏天的露台终于开张。两把月亮椅、一盘桃子，还有一点比想象中更凉的风。</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>

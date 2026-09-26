@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jane-wang-art.github.io/sitemap.xml
