@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><%= page.title ? page.title + ' · ' : '' %><%= config.title %> — 生活漫画</title>
+<meta name="description" content="<%= page.description || config.description %>">
+<meta name="author" content="Jane Wang">
+<meta name="theme-color" content="#fffafa">
+<meta property="og:title" content="<%= page.title || 'Jane Wang · 生活漫画' %>">
+<meta property="og:description" content="<%= page.description || config.description %>">
+<meta property="og:type" content="<%= page.layout === 'post' ? 'article' : 'website' %>">
+<meta property="og:url" content="<%= config.url + url_for(page.path || '/') %>">
+<meta property="og:image" content="<%= config.url %>/images/autumn-terrace/04-1122.webp">
+<meta property="og:site_name" content="Jane Wang">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="<%= config.url + url_for(page.path || '/') %>">
+<link rel="icon" type="image/svg+xml" href="<%= url_for('/favicon.svg') %>">
+<link rel="alternate" type="application/atom+xml" title="Jane Wang · 新故事" href="<%= url_for('/atom.xml') %>">
+<link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+<script src="<%= url_for('/js/main.js') %>" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="<%= url_for('/') %>" aria-label="Jane Wang 首页"><span class="brand-mark" aria-hidden="true">jw<span>·</span></span><span class="brand-name">Jane Wang<small>ILLUSTRATED DAYS</small></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span>菜单</span><span aria-hidden="true">☰</span></button>
+<nav id="main-nav" aria-label="主导航">
+<% const links = [['/','首页'],['/gallery/','作品画廊'],['/archives/','日常漫画'],['/about/','关于 Jane']]; links.forEach(function(item){ const active = item[0] === '/' ? !page.path || page.path === 'index.html' : (page.path || '').startsWith(item[0].slice(1)); %>
+<a href="<%= url_for(item[0]) %>"<% if(active){ %> aria-current="page"<% } %>><%= item[1] %></a>
+<% }); %>
+<a class="nav-license" href="<%= url_for('/licensing/') %>">授权与转载 <span aria-hidden="true">↗</span></a>
+</nav></div></header>
+<main id="main"><%- body %></main>
+<footer class="site-footer"><div class="footer-inner"><a class="footer-brand" href="<%= url_for('/') %>">Jane Wang<span>把日子，画成小故事。</span></a><div class="footer-right"><div class="footer-links"><a href="<%= url_for('/licensing/') %>">授权说明</a><a href="<%= config.artwork_repository %>" target="_blank" rel="noopener">原图仓库 ↗</a><a href="<%= url_for('/atom.xml') %>">RSS</a></div><p>Artwork by Jane Wang · © <%= new Date().getFullYear() %> jane-wang-art</p><small>保留所有权利 · Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> · Soft Margin</small></div></div></footer>
+<button class="back-top" type="button" aria-label="回到顶部" hidden>↑</button>
+<dialog id="lightbox" aria-labelledby="lightbox-title"><div class="lightbox-bar"><p id="lightbox-title"></p><button type="button" class="lightbox-close" aria-label="关闭大图">×</button></div><div class="lightbox-stage"><button type="button" class="lightbox-prev" aria-label="上一张">←</button><img id="lightbox-image" alt=""><button type="button" class="lightbox-next" aria-label="下一张">→</button></div><div class="lightbox-footer"><span id="lightbox-count" aria-live="polite"></span><span>Artwork by Jane Wang</span><a id="lightbox-original" target="_blank" rel="noopener">查看原图 ↗</a></div><p class="lightbox-hint">← → 切换 · Esc 关闭 · 手机可左右滑动</p></dialog>
+</body></html>

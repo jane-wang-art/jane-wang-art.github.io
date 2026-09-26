@@ -1,0 +1,5 @@
+<article class="art-card">
+<a class="art-image" href="<%= url_for('/images/' + story.id + '/' + art.id + '.png') %>" data-lightbox data-caption="<%= story.title %> · <%= art.id %> / <%= String(story.pages.length).padStart(2,'0') %> · <%= art.title %>" data-alt="<%= art.alt %>">
+<img src="<%= url_for('/images/' + story.id + '/' + art.id + '-640.webp') %>" srcset="<%= url_for('/images/' + story.id + '/' + art.id + '-640.webp') %> 640w, <%= url_for('/images/' + story.id + '/' + art.id + '-1122.webp') %> 1122w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 44vw, 350px" width="1122" height="1402" loading="lazy" decoding="async" alt="<%= art.alt %>"><span class="art-zoom" aria-hidden="true">↗</span>
+</a><div class="art-caption"><span class="art-number"><%= art.id %></span><div><h3><a href="<%= url_for(story.path) %>#page-<%= art.id %>"><%= art.title %></a></h3><p><%= story.title %> · Jane Wang</p></div></div>
+</article>

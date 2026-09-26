@@ -1,0 +1,75 @@
+name: Build and publish Hexo gallery
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: jane-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'jane-wang-art/jane-wang-art.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts --no-audit; else npm install --ignore-scripts --no-audit; fi
+          python3 -m pip install Pillow==11.3.0 playwright==1.55.0
+      - name: Build real Hexo site and verify originals
+        run: npm run build
+      - name: Save initial dependency lock
+        run: |
+          if ! git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add package-lock.json
+            git commit -m 'build: lock Hexo dependencies'
+            git push origin HEAD:main
+          fi
+      - name: Browser checks
+        run: |
+          python3 -m playwright install --with-deps chromium
+          python3 tools/test_browser.py
+      - name: Keep generated snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash tools/publish-snapshot.sh
+      - name: Upload test screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-test-screenshots
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

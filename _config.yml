@@ -1,0 +1,50 @@
+title: Jane Wang
+subtitle: 生活漫画 · Illustrated days
+description: Jane Wang 的生活漫画与插画。大狗、小狗和墨狗，把平常日子画成小故事。
+author: Jane Wang
+language: zh-CN
+timezone: Asia/Shanghai
+url: https://jane-wang-art.github.io
+root: /
+permalink: stories/:title/
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+new_post_name: :title.md
+default_layout: post
+external_link:
+  enable: false
+post_asset_folder: false
+render_drafts: false
+future: false
+highlight:
+  enable: false
+prismjs:
+  enable: false
+index_generator:
+  path: ''
+  per_page: 12
+  order_by: -date
+archive_generator:
+  enabled: true
+  per_page: 24
+  yearly: false
+  monthly: false
+theme: soft-margin
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+sitemap:
+  path: sitemap.xml
+skip_render:
+  - images/**
+  - robots.txt
+  - favicon.svg
+artwork_repository: https://github.com/jane-wang-art/jane-frank-artwork
+copyright_identity: jane-wang-art
